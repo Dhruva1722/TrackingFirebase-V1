@@ -1,4 +1,4 @@
-package com.example.afinal
+package com.example.afinal.MapActivity
 
 import android.content.Context.SENSOR_SERVICE
 import android.hardware.Sensor

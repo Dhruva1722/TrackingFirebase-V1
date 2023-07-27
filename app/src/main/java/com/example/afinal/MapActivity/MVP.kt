@@ -1,7 +1,8 @@
-package com.example.afinal
+package com.example.afinal.MapActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
+import com.example.afinal.R
 import com.google.android.gms.maps.model.LatLng
 
 class MVP(private val activity: AppCompatActivity) {

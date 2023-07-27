@@ -1,8 +1,8 @@
-package com.example.afinal
+package com.example.afinal.MapActivity
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.afinal.R
 
 class MapPresenter(private val activity: AppCompatActivity) {
 

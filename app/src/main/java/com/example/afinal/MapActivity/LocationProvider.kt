@@ -1,8 +1,9 @@
-package com.example.afinal
+package com.example.afinal.MapActivity
 
 import android.annotation.SuppressLint
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.location.LocationManagerCompat.requestLocationUpdates
 import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -42,12 +43,23 @@ class LocationProvider(private val activity: AppCompatActivity) {
     }
 
     fun getUserLocation() {
+//        client.lastLocation.addOnSuccessListener { location ->
+//            val latLng = LatLng(location.latitude, location.longitude)
+//            locations.add(latLng)
+//            liveLocation.value = latLng
+//        }
         client.lastLocation.addOnSuccessListener { location ->
-            val latLng = LatLng(location.latitude, location.longitude)
-            locations.add(latLng)
-            liveLocation.value = latLng
+            if (location != null) {
+                val latLng = LatLng(location.latitude, location.longitude)
+                locations.add(latLng)
+                liveLocation.value = latLng
+            } else {
+                // Location is null, request location updates explicitly
+                trackUser()
+            }
         }
     }
+
 
     fun trackUser() {
         val locationRequest = LocationRequest.create()

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MapsActivity">
+    tools:context=".MapActivity.MapsActivity">
 
     <include
         android:id="@+id/container"
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:context=".MapsActivity" />
+        tools:context=".MapActivity.MapsActivity" />
 
     <Button
         android:id="@+id/btnStartStop"

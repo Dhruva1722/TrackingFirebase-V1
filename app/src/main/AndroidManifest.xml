@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FInal"
         tools:targetApi="31">
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -33,16 +43,11 @@
             android:value="AIzaSyCPMzDrHp2bAWHWMNorudJ3BqS08pDcVvg" />
 
         <activity
-            android:name=".MapsActivity"
-            android:exported="true"
+            android:name=".MapActivity.MapsActivity"
+            android:exported="false"
             android:label="@string/title_activity_maps">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
