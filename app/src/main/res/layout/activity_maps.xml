@@ -7,24 +7,31 @@
     android:orientation="vertical"
     tools:context=".MapActivity.MapsActivity">
 
-    <include
-        android:id="@+id/container"
-        layout="@layout/layout_indicators" />
+
 
     <fragment android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         xmlns:map="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        tools:context=".MapActivity.MapsActivity" />
+        tools:context=".MapActivity.MapsActivity"
+        android:layout_marginTop="5dp">
+
+    </fragment>
+
+
+    <include
+        android:id="@+id/container"
+        layout="@layout/layout_indicators" />
 
     <Button
         android:id="@+id/btnStartStop"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="start_label"
-        android:textColor="@color/black"/>
+        android:text="Click here to Start Tracking"
+        android:textColor="@color/white" />
 
+<!--    style="@style/Widget.AppCompat.Button.Borderless.Colored"-->
+<!--    android:text="start_label"-->
 </LinearLayout>

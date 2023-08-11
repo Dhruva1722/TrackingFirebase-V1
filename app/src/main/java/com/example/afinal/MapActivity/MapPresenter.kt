@@ -1,5 +1,6 @@
 package com.example.afinal.MapActivity
 
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import com.example.afinal.R
@@ -10,6 +11,7 @@ class MapPresenter(private val activity: AppCompatActivity) {
 
     private val stepCounter = StepCounter(activity)
 
+    val fuelEfficiencyKmpl = 55
 
     private val permissionsManager = PermissionsManager(activity, locationProvider, stepCounter)
 
@@ -29,12 +31,32 @@ class MapPresenter(private val activity: AppCompatActivity) {
             ui.postValue(current?.copy(currentLocation = currentLocation))
         }
 
+//        locationProvider.liveDistance.observe(activity) { distance ->
+//            val current = ui.value
+//            val formattedDistance = activity.getString(R.string.distance_value, distance / 1000.0)
+//            ui.value = current?.copy(formattedDistance = formattedDistance)
+//
+////            val formattedDistance = activity.getString(R.string.distance_value, distance)
+////            ui.value = current?.copy(formattedDistance = formattedDistance)
+//        }
+
         locationProvider.liveDistance.observe(activity) { distance ->
             val current = ui.value
-            val formattedDistance = activity.getString(R.string.distance_value, distance)
-            ui.postValue(current?.copy(formattedDistance = formattedDistance))
+            val formattedDistance = activity.getString(R.string.distance_value, distance / 1000.0)
+
+            val fuelConsumptionLiters = (distance.toDouble() / 1000.0) / fuelEfficiencyKmpl
+            val formattedFuelConsumption = activity.getString(
+                R.string.fuel_consumption_value,
+                fuelConsumptionLiters
+            )
+
+            ui.value = current?.copy(
+                formattedDistance = formattedDistance,
+                formattedFuelConsumption = formattedFuelConsumption
+            )
         }
         permissionsManager.requestActivityRecognition()
+
     }
 
     fun onMapLoaded() {
@@ -44,8 +66,28 @@ class MapPresenter(private val activity: AppCompatActivity) {
 
     fun startTracking() {
 //        TODO("Not yet implemented")
-        locationProvider.trackUser()
+//        locationProvider.trackUser()
+        if (locationProvider.isLocationEnabled()) {
+            permissionsManager.requestActivityRecognition()
+            locationProvider.trackUser()
+
+            val currentUi = ui.value
+
+            ui.value = currentUi?.copy(
+                formattedPace = Ui.EMPTY.formattedPace,
+                formattedDistance = Ui.EMPTY.formattedDistance,
+
+            )
+
+
+        } else {
+            // Show a dialog or toast message to prompt the user to turn on location services
+            // For example, you can use a Toast message to inform the user
+            Toast.makeText(activity, "Please turn on location services", Toast.LENGTH_SHORT).show()
+        }
     }
+
+
 
     fun stopTracking() {
         locationProvider.stopTracking()

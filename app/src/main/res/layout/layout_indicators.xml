@@ -5,59 +5,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
-    android:padding="10dp"
-    android:background="#E3E3E3">
-
-<LinearLayout
-    android:id="@id/pace_ly"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:background="@drawable/indicator_bg"
+    android:elevation="8dp"
     android:layout_margin="5dp">
-    <ImageView
-        android:id="@+id/imgPace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="average_pace_label"
-        app:srcCompat="@drawable/ic_pace" />
-    <TextView
-        android:id="@+id/txtPaceLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/average_pace_label"
-        android:layout_marginLeft="5dp"/>
 
-    <TextView
-        android:id="@+id/txtPace"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@id/pace_ly"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        tools:text="3.4 m/s"
-        android:textColor="@color/black"
-        android:layout_marginLeft="220dp"/>
+         android:layout_margin="1dp"
+        android:padding="10dp"
+        android:layout_below="@id/latlan_ly">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/imgPace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="average_pace_label"
+            android:src="@drawable/baseline_speed_24"
+            />
+
+        <TextView
+            android:id="@+id/txtPaceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/average_pace_label" />
+
+        <TextView
+            android:id="@+id/txtPace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/black"
+            tools:text="3.4 m/s" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/time_ly"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/pace_ly"
-        android:layout_margin="5dp">
+        android:layout_margin="1dp"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imgTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="elapsed_time_label"
-            app:srcCompat="@drawable/ic_time" />
+            android:contentDescription="Time"
+            android:src="@drawable/baseline_timer_24"/>
 
         <TextView
             android:id="@+id/txtTimeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="elapsed_time_label"
+            android:text="Time"
             android:layout_marginLeft="5dp"/>
 
         <Chronometer
@@ -67,49 +74,68 @@
             android:fontFamily="monospace"
             tools:text="45 minutes"
             android:textColor="@color/black"
-            android:layout_marginLeft="130dp"/>
+            android:layout_marginLeft="200dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/distance_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_ly"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imgDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgTime"
+            android:contentDescription="distance_label"
+            android:src="@drawable/baseline_timeline_24" />
+
+        <TextView
+            android:id="@+id/txtDistanceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Distance Cover" />
+
+        <TextView
+            android:id="@+id/txtDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/black"
+            tools:text="12 km" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/gaspump" />
+
+        <TextView
+            android:id="@+id/txtFuelConsumption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="0l"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     </LinearLayout>
 
    <LinearLayout
-       android:id="@+id/distance_ly"
+       android:id="@+id/latlan_ly"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_below="@id/time_ly"
-       android:layout_margin="5dp">
-
-       <ImageView
-           android:id="@+id/imgDistance"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:contentDescription="distance_label"
-           android:layout_below="@id/imgTime"
-           app:srcCompat="@drawable/ic_distance" />
-
-       <TextView
-           android:id="@+id/txtDistanceLabel"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:fontFamily="sans-serif-smallcaps"
-           android:text="distance_label"
-           android:layout_marginLeft="5dp"/>
-
-       <TextView
-           android:id="@+id/txtDistance"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:fontFamily="monospace"
-           tools:text="12 km"
-           android:layout_marginLeft="160dp"
-           android:textColor="@color/black" />
-
-   </LinearLayout>
-
-   <LinearLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_below="@id/distance_ly"
-       android:layout_centerHorizontal="true">
+       android:layout_centerHorizontal="true"
+       android:padding="5dp">
 
        <TextView
            android:id="@+id/tv_labellat"
