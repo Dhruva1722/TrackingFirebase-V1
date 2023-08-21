@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity.LoginActivity"
+    android:background="#77C5D9ED">
+
+
+    <LinearLayout
+        android:id="@+id/bgLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#0039A9"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/pana"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo1"/>
+
+
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/loginTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="25sp"
+        android:textColor="#0039A9"
+        android:layout_below="@id/bgLayout1"
+        android:textStyle="bold"
+        android:fontFamily="@font/inriaserifregular"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginTxt"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email / Employe ID"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawableRight="@drawable/baseline_person_24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:id="@+id/loginEmailID"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#0039A9">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginPasswordID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your password"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/forgetPAsswordID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forget Password?"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/loginBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textAllCaps="false"
+            android:textSize="13sp"
+            android:padding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/newUserID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New User? Create Account"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

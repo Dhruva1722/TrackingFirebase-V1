@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity.UserDetails"
+    android:background="#77C5D9ED">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0039A9"
+        app:title="@string/app_name"
+        app:titleTextColor="@android:color/white" >
+
+
+            <ImageView
+                android:id="@+id/helpBtn"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/baseline_help_24"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/transportationLY"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/loginbg"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Mode of Transportation"
+            android:textSize="20sp"
+            android:textColor="#0039A9"
+            android:textStyle="bold"
+            android:fontFamily="@font/inriaserifregular"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="12dp"/>
+
+
+            
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/busLY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/bus"
+                    android:contentDescription="Bus Icon"/>
+
+                <RadioButton
+                    android:id="@+id/busRadio"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="0dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/motorbikeLY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/motorbike"
+                    android:contentDescription="Bus Icon"/>
+
+                <RadioButton
+                    android:id="@+id/bikeRadio"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="0dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/airplaneLY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/flight"
+                    android:contentDescription="Bus Icon"/>
+
+                <RadioButton
+                    android:id="@+id/airplaneRadio"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="0dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/trainLY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/train"
+                    android:contentDescription="Bus Icon"/>
+
+                <RadioButton
+                    android:id="@+id/trainRadio"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="0dp"/>
+
+            </LinearLayout>
+
+            </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/expensesLY"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/transportationLY"
+        android:background="@drawable/loginbg"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/expensesTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload your Expenses Bills:"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#002161"
+            android:fontFamily="@font/inriaserifregular"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/expensesBillTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ex. Food,Petrol,Hotel,Ticket"
+            android:textSize="12sp"
+            android:fontFamily="@font/inriaserifregular"
+            android:textColor="#012263"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <ImageView
+            android:id="@+id/uploadButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/image"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/expensesBillTxt"/>
+
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/thankmsgTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thank you for visiting"
+            android:textColor="#076000"
+            android:layout_below="@id/expensesLY"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>

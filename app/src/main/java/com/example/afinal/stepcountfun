@@ -1,0 +1,52 @@
+//        override fun onStepUpdated(steps: Int) {
+//            // Update the user's location based on steps (approximation)
+//            val currentLocation = presenter.ui.value?.currentLocation
+//            if (currentLocation != null) {
+//                // Calculate the new latitude and longitude based on the step count
+//                // (This is just an example, you may need to adjust the calculation)
+//                val latitudeIncrement =1000 * steps // Adjust this value as needed
+//                val longitudeIncrement = 1000 * steps // Adjust this value as needed
+//
+//                // Update the current location with the new latitude and longitude
+//                val newLatitude = currentLocation.latitude + latitudeIncrement
+//                val newLongitude = currentLocation.longitude + longitudeIncrement
+//                val newLocation = LatLng(newLatitude, newLongitude)
+//
+//                // Update the user's path with the new location
+//                val updatedPath = presenter.ui.value?.userPath?.toMutableList()?.apply {
+//                    add(newLocation)
+//                } ?: listOf(newLocation)
+//
+//                // Update the UI with the new location and path
+//                presenter.ui.value = presenter.ui.value?.copy(
+//                    currentLocation = newLocation,
+//                    userPath = updatedPath
+//                )
+//
+//
+//
+//            }
+
+
+//Search place google code
+
+<fragment
+      android:id="@+id/place_autocomplete_fragment"
+      android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+ val autocompleteFragment = fragmentManager.findFragmentById(R.id.place_autocomplete_fragment) as PlaceAutocompleteFragment
+            autocompleteFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
+                override fun onPlaceSelected(place: Place) {
+                    map.clear()
+                    map.addMarker(MarkerOptions().position(place.latLng).title(place.name.toString()))
+                    map.moveCamera(CameraUpdateFactory.newLatLng(place.latLng))
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(place.latLng, 12.0f))
+                }
+
+                override fun onError(status: Status) {
+                    // Handle error if needed
+                }
+            })
+        }

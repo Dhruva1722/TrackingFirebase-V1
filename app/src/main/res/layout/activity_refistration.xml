@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity.RegistrationActivity"
+    android:background="#77C5D9ED">
+
+
+
+    <LinearLayout
+        android:id="@+id/bgLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#0039A9"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/pana"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/registrationTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bgLayout1"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/inriaserifregular"
+        android:text="Registration"
+        android:textColor="#0039A9"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        android:layout_below="@id/registrationTxt">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Employee ID"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawableEnd="@drawable/baseline_credit_card_24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:id="@+id/registerEmployeID"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Your Name"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawableRight="@drawable/baseline_person_24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:id="@+id/registerNameID"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Your Email"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawableEnd="@drawable/baseline_email_24"
+                android:id="@+id/registerEmailID"
+                android:layout_width="match_parent"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="your password"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#0039A9"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:id="@+id/registerPasswordID"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registration"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+
+    <!--    <ProgressBar-->
+<!--        android:id="@+id/progressBar"-->
+<!--        style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:max="100"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_below="@id/registrationTxt"/>-->
+
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewPager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_above="@id/navigationLayout"-->
+<!--        android:layout_below="@id/progressBar"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/navigationLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:padding="12dp">-->
+
+
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/previousButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:src="@drawable/baseline_arrow_back_ios_24"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:visibility="gone"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/nextButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_gravity="center"/>-->
+
+
+<!--        </RelativeLayout>-->
+
+
+<!--    </LinearLayout>-->
+
+
+
+</RelativeLayout>

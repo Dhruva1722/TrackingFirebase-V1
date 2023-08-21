@@ -5,18 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MapActivity.MapsActivity">
+    tools:context=".MapActivity.MapsActivity"
+    android:background="#77C5D9ED">
+
+  <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="#0039A9"
+      app:title="@string/app_name"
+      app:titleTextColor="@android:color/white" >
+
+
+      <ImageView
+          android:id="@+id/helpBtn"
+          android:layout_width="23dp"
+          android:layout_height="23dp"
+          android:gravity="center"
+          android:layout_gravity="right"
+          android:layout_marginEnd="30dp"
+          android:src="@drawable/baseline_help_24"/>
+
+
+  </androidx.appcompat.widget.Toolbar>
+
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:layout_marginStart="5dp"
+      android:layout_marginEnd="5dp">
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:hint="Search location">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15sp"
+          android:textColor="@color/black"
+          android:id="@+id/edt_search"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="searchLocation"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/baseline_search_24" />
+
+
+  </LinearLayout>
 
 
 
-    <fragment android:id="@+id/map"
+  <fragment android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         xmlns:map="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
         tools:context=".MapActivity.MapsActivity"
         android:layout_marginTop="5dp">
+
 
     </fragment>
 
@@ -24,13 +79,36 @@
     <include
         android:id="@+id/container"
         layout="@layout/layout_indicators" />
+  <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="5dp"
+      android:layout_marginEnd="5dp">
 
     <Button
         android:id="@+id/btnStartStop"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Click here to Start Tracking"
-        android:textColor="@color/white" />
+        android:text="Start"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"/>
+
+
+    <Button
+        android:id="@+id/ExitBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/white"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="10dp"/>
+
+  </RelativeLayout>
+
+
 
 <!--    style="@style/Widget.AppCompat.Button.Borderless.Colored"-->
 <!--    android:text="start_label"-->

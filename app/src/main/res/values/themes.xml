@@ -4,9 +4,9 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorPrimary">#000000</item>
         <item name="bottomNavigationStyle">@style/Widget.MaterialComponents.BottomNavigationView.Colored</item>
-        <item name="colorPrimary">#189191</item>
+        <item name="colorPrimary">#00308F</item>
         <item name="colorOnPrimary">#FFFFFF</item>
 
 

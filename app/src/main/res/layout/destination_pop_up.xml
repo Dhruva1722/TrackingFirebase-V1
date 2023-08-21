@@ -25,5 +25,50 @@
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"/>
 
+    <LinearLayout
+        android:id="@+id/latlon_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/tv_labellat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lat:" />
+
+        <TextView
+            android:id="@+id/tv_destination_latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00.00000"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_labellon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lng:"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_destination_longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00.0000000"
+            android:layout_marginLeft="5dp"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStartStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Start Tracking"
+        android:textColor="@color/white" />
 
 </LinearLayout>
