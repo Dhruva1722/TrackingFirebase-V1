@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity.ComplaintActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0039A9"
+        app:title="@string/app_name"
+        app:titleTextColor="@android:color/white"/>
+
+
+
+
+    <TextView
+        android:id="@+id/txt_complaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write your Complaint here"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:fontFamily="@font/inriaserifregular"
+        android:textStyle="bold"/>
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="310dp"
+            android:layout_height="200dp"
+            android:hint="Send message"
+            android:layout_below="@id/txt_complaint"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/edt_MsgInput_ly">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/msg_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:maxLines="10"
+                android:minLines="10"
+                android:scrollbars="vertical" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@id/edt_MsgInput_ly"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"/>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/alertImg"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/alert"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginBottom="100dp"/>-->
+
+</RelativeLayout>

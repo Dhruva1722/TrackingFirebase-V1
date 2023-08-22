@@ -40,6 +40,9 @@
         android:layout_below="@id/toolbar"
         android:orientation="vertical">
 
+
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,126 +54,97 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="12dp"/>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="48dp"
+                android:src="@drawable/bus"
+                android:layout_marginEnd="30dp"
+                android:contentDescription="Bus Icon"/>
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/motorbike"
+                android:layout_marginEnd="30dp"
+                android:contentDescription="Bus Icon"/>
 
-            
-            <RadioGroup
-                android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="48dp"
+                android:src="@drawable/train"
+                android:layout_marginEnd="30dp"
+                android:contentDescription="Bus Icon"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="48dp"
+                android:src="@drawable/flight"
+                android:contentDescription="Bus Icon"/>
+        </LinearLayout>
+
+
+
+        <RadioGroup
+            android:id="@+id/idRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <!--on below line we are creating a radio buttons-->
+            <RadioButton
+                android:id="@+id/idBtnBusRadio"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp">
+                android:text="Bus"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
-            <LinearLayout
-                android:id="@+id/busLY"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/idBtnBikeRadio"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="10dp">
+                android:text="Bike"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/bus"
-                    android:contentDescription="Bus Icon"/>
-
-                <RadioButton
-                    android:id="@+id/busRadio"
-                    android:layout_width="30dp"
-                    android:layout_height="20dp"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_marginTop="0dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/motorbikeLY"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/idBtnTrainRadio"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="10dp">
+                android:text="Train"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/motorbike"
-                    android:contentDescription="Bus Icon"/>
-
-                <RadioButton
-                    android:id="@+id/bikeRadio"
-                    android:layout_width="30dp"
-                    android:layout_height="20dp"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_marginTop="0dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/airplaneLY"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/idBtnFlightRadio"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="10dp">
+                android:text="Flight"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </RadioGroup>
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/flight"
-                    android:contentDescription="Bus Icon"/>
-
-                <RadioButton
-                    android:id="@+id/airplaneRadio"
-                    android:layout_width="30dp"
-                    android:layout_height="20dp"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_marginTop="0dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/trainLY"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="10dp">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/train"
-                    android:contentDescription="Bus Icon"/>
-
-                <RadioButton
-                    android:id="@+id/trainRadio"
-                    android:layout_width="30dp"
-                    android:layout_height="20dp"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_marginTop="0dp"/>
-
-            </LinearLayout>
-
-            </RadioGroup>
 
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/expensesLY"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
         android:layout_below="@id/transportationLY"
         android:background="@drawable/loginbg"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_marginTop="15dp">
 
         <TextView
             android:id="@+id/expensesTxt"
@@ -192,31 +166,33 @@
             android:fontFamily="@font/inriaserifregular"
             android:textColor="#012263"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/expensesTxt"
+            android:layout_centerHorizontal="true"/>
 
         <ImageView
             android:id="@+id/uploadButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
             android:src="@drawable/image"
-            android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/expensesBillTxt"/>
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/expensesBillTxt"
+            android:layout_below="@id/expensesTxt"/>
 
-    </LinearLayout>
-
-        <TextView
-            android:id="@+id/thankmsgTxt"
+        <Button
+            android:id="@+id/saveBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thank you for visiting"
-            android:textColor="#076000"
-            android:layout_below="@id/expensesLY"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:padding="5dp"
-            android:layout_centerHorizontal="true"/>
+            android:text="Save"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+
+
+
 
 
     <Button

@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.example.afinal.MapActivity.MapsActivity
@@ -24,6 +25,7 @@ class RegistrationActivity : AppCompatActivity() {
 //    private lateinit var nextButton: ImageView
 //    private lateinit var previousButton: ImageView
 
+    private lateinit var haveAnAccount: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
 
@@ -34,6 +36,8 @@ class RegistrationActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("users")
+        haveAnAccount = findViewById(R.id.haveAnAccountTxt)
+
 
         val registerButton = findViewById<Button>(R.id.registerBtn)
         registerButton.setOnClickListener {
@@ -71,6 +75,11 @@ class RegistrationActivity : AppCompatActivity() {
                         ).show()
                     }
                 }
+
+            haveAnAccount.setOnClickListener {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
 
 
         }

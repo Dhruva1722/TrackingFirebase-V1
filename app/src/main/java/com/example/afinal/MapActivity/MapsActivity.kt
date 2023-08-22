@@ -17,7 +17,7 @@
     import android.widget.Toast
     import androidx.appcompat.app.AppCompatActivity
     import com.example.afinal.R
-    import com.example.afinal.UserActivity.ComplainActivity
+    import com.example.afinal.UserActivity.ComplaintActivity
     import com.example.afinal.UserActivity.HelpActivity
     import com.example.afinal.UserActivity.UserDetails
     import com.example.afinal.databinding.ActivityMapsBinding
@@ -115,7 +115,7 @@
                     }
                     R.id.action_complain -> {
                         // Handle Feedback action
-                        val intent = Intent(this, ComplainActivity::class.java)
+                        val intent = Intent(this, ComplaintActivity::class.java)
                         startActivity(intent)
                         true
                     }

@@ -60,13 +60,13 @@ class LocationProvider(private val activity: AppCompatActivity) {
 
                 val lastLocation = locations.lastOrNull()
                 if (lastLocation != null) {
-                    val distanceToCurrent = SphericalUtil.computeDistanceBetween(lastLocation, latLng)
-
-                    // Add a distance threshold (e.g., 5 meters) to consider movement
-                    if (distanceToCurrent >= 5.0) {
-                        distance += distanceToCurrent.roundToInt()
-                        liveDistance.value = distance
-                    }
+//                    val distanceToCurrent = SphericalUtil.computeDistanceBetween(lastLocation, latLng)
+//
+//                    // Add a distance threshold (e.g., 5 meters) to consider movement
+//                    if (distanceToCurrent >= 5.0) {
+//                        distance += distanceToCurrent.roundToInt()
+//                        liveDistance.value = distance
+//                    }
                 }
 
                 locations.add(latLng)

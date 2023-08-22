@@ -18,7 +18,7 @@
         android:theme="@style/Theme.FInal"
         tools:targetApi="31">
         <activity
-            android:name=".UserActivity.ComplainActivity"
+            android:name=".UserActivity.ComplaintActivity"
             android:exported="false" />
         <activity
             android:name=".UserActivity.HelpActivity"
