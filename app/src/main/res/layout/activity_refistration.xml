@@ -23,6 +23,12 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"/>
 
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo1"/>
+
     </LinearLayout>
 
     <TextView
@@ -119,6 +125,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <Button
             android:id="@+id/registerBtn"
             android:layout_width="wrap_content"
@@ -128,14 +135,13 @@
             android:layout_gravity="center"/>
 
 
-
         <TextView
             android:id="@+id/haveAnAccountTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an Account?"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="15dp"
+            android:text="Already have an Account?" />
 
 
     </LinearLayout>

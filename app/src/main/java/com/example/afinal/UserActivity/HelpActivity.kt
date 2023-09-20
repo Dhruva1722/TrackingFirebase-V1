@@ -23,29 +23,30 @@ class HelpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_help)
 
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        managerAdapter = ManagerAdapter(this, mutableListOf())
-        recyclerView.adapter = managerAdapter
+//        recyclerView = findViewById(R.id.recyclerView)
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+//        managerAdapter = ManagerAdapter(this, mutableListOf())
+//        recyclerView.adapter = managerAdapter
+//
+//        databaseReference = FirebaseDatabase.getInstance().getReference("managers")
+//        Log.d(databaseReference.toString(), "onCreate: database referance----------- "+ databaseReference)
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("managers")
-
-        // Fetch data from Firebase and update the adapter
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val managers = mutableListOf<Manager>()
-                for (dataSnapshot in snapshot.children) {
-                    val manager = dataSnapshot.getValue(Manager::class.java)
-                    manager?.let { managers.add(it) }
-                }
-                managerAdapter.managers = managers
-                managerAdapter.notifyDataSetChanged()
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.e("HelpActivity", "Error fetching data--------------------", error.toException())
-            }
-        })
+//        // Fetch data from Firebase and update the adapter
+//        databaseReference.addValueEventListener(object : ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                val managers = mutableListOf<Manager>()
+//                for (dataSnapshot in snapshot.children) {
+//                    Log.d("Snapshot Key", dataSnapshot.key ?: "null")
+//                    val manager = dataSnapshot.getValue(Manager::class.java)
+//                    manager?.let { managers.add(it) }
+//                }
+//                managerAdapter.managers = managers
+//                managerAdapter.notifyDataSetChanged()
+//            }
+//            override fun onCancelled(error: DatabaseError) {
+//                Log.e("HelpActivity", "Error fetching data--------------------", error.toException())
+//            }
+//        })
 
     }
 }

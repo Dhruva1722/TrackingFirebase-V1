@@ -25,21 +25,19 @@ class ManagerAdapter(private val context: Context, var managers: List<Manager>) 
     override fun getItemCount() = managers.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        private val imageView: ImageView = itemView.findViewById(R.id.manager_img)
+        private val imageView: ImageView = itemView.findViewById(R.id.manager_img)
         private val textName: TextView = itemView.findViewById(R.id.managerName)
         private val textNumber: TextView = itemView.findViewById(R.id.managerNum)
         private val textCity: TextView = itemView.findViewById(R.id.managerCity)
 
         fun bind(manager: Manager) {
-//            Glide.with(context).load(manager.image).into(imageView)
+           Glide.with(context).load(manager.image).into(imageView)
             textName.text = manager.name
             textNumber.text = manager.number
             textCity.text = manager.city
         }
     }
 }
-
-
 data class Manager(
     val name: String = "",
     val number: String = "",

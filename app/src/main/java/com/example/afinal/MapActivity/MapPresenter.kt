@@ -1,5 +1,6 @@
 package com.example.afinal.MapActivity
 
+import android.content.Context
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +8,7 @@ import com.example.afinal.R
 
 class MapPresenter(private val activity: AppCompatActivity) {
 
-    private val locationProvider = LocationProvider(activity)
+    private val locationProvider = LocationProvider(activity )
 
     private val stepCounter = StepCounter(activity)
 
@@ -21,6 +22,12 @@ class MapPresenter(private val activity: AppCompatActivity) {
 
     fun onViewCreated() {
 //        TODO("Not yet implemented")
+
+        stepCounter.liveSteps.observe(activity) { steps ->
+            val current = ui.value
+            ui.value = current?.copy(formattedPace = "$steps")
+        }
+
         locationProvider.liveLocations.observe(activity) { locations ->
             val current = ui.value
             ui.postValue(current?.copy(userPath = locations))
@@ -95,3 +102,6 @@ class MapPresenter(private val activity: AppCompatActivity) {
     }
 
 }
+
+
+

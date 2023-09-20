@@ -3,14 +3,10 @@ package com.example.afinal.UserActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.viewpager.widget.ViewPager
+import com.example.afinal.MainActivity
 import com.example.afinal.MapActivity.MapsActivity
 import com.example.afinal.R
 import com.google.android.material.textfield.TextInputEditText
@@ -59,8 +55,10 @@ class RegistrationActivity : AppCompatActivity() {
 
                             // Navigate to the next screen or perform any other action
                             // For example, navigate to MapsActivity
-                            val intent = Intent(this, MapsActivity::class.java)
+                            val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
+                            overridePendingTransition(R.anim.slide_down,
+                                R.anim.slide_left_out);
                             finish()
                         }
                     } else {
@@ -80,7 +78,6 @@ class RegistrationActivity : AppCompatActivity() {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
-
 
         }
 

@@ -9,7 +9,7 @@ import android.hardware.SensorManager.SENSOR_DELAY_FASTEST
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 
-class StepCounter (private val activity: AppCompatActivity) : SensorEventListener {
+open class StepCounter (private val activity: AppCompatActivity) : SensorEventListener {
 
     interface StepUpdater {
 

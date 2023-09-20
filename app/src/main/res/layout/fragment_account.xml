@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity.Fragment.AccountFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#77C5D9ED">
+
+
+        <TextView
+            android:id="@+id/tvManagerList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manager Contact list"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/inriaserifregular"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:elevation="8dp"
+            android:layout_below="@id/tvManagerList">
+
+
+            <RelativeLayout
+                android:id="@+id/firstList"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+
+                <ImageView
+                    android:id="@+id/manager_img"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/avtar" />
+
+                <TextView
+                    android:id="@+id/managerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dhruva"
+                    android:fontFamily="@font/inriaserifregular"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/managerNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0987654321"
+                    android:drawableStart="@drawable/baseline_call_24"
+                    android:drawablePadding="5dp"
+                    android:textSize="15sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/managerName"
+                    android:autoLink="phone"
+                    android:clickable="true"/>
+
+                <TextView
+                    android:id="@+id/managerCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ahmedabad"
+                    android:textSize="12sp"
+                    android:drawableStart="@drawable/baseline_location_on_24"
+                    android:drawablePadding="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/managerNum"/>
+
+
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:layout_below="@id/card1">
+
+
+            <RelativeLayout
+                android:id="@+id/firstList1"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+
+                <ImageView
+                    android:id="@+id/manager_img1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/woman" />
+
+                <TextView
+                    android:id="@+id/managerName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pooja"
+                    android:fontFamily="@font/inriaserifregular"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/managerNum1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1234567890"
+                    android:textSize="15sp"
+                    android:drawableStart="@drawable/baseline_call_24"
+                    android:drawablePadding="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/managerName1"
+                    android:autoLink="phone"
+                    android:clickable="true"/>
+
+                <TextView
+                    android:id="@+id/managerCity1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sindhubhavan"
+                    android:drawableStart="@drawable/baseline_location_on_24"
+                    android:drawablePadding="5dp"
+                    android:textSize="12sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/managerNum1"/>
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

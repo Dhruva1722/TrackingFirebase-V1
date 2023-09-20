@@ -102,7 +102,7 @@
                 android:text="Bus"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/idBtnBikeRadio"
@@ -111,7 +111,7 @@
                 android:text="Bike"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/idBtnTrainRadio"
@@ -120,7 +120,7 @@
                 android:text="Train"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/idBtnFlightRadio"
@@ -129,7 +129,7 @@
                 android:text="Flight"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
         </RadioGroup>
 
 
@@ -139,7 +139,7 @@
     <RelativeLayout
         android:id="@+id/expensesLY"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="250dp"
         android:layout_below="@id/transportationLY"
         android:background="@drawable/loginbg"
         android:layout_marginStart="15dp"
@@ -172,12 +172,15 @@
 
         <ImageView
             android:id="@+id/uploadButton"
-            android:layout_width="25dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/image"
-            android:layout_marginStart="10dp"
-            android:layout_toRightOf="@id/expensesBillTxt"
-            android:layout_below="@id/expensesTxt"/>
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/expensesBillTxt"/>
+
+
+
 
         <Button
             android:id="@+id/saveBtn"
@@ -189,6 +192,45 @@
             android:layout_alignParentBottom="true" />
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/imageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/expensesLY"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true">
+
+
+        <TextView
+            android:id="@+id/thankYouTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/inriaserifregular"
+            android:text="Thank you for uploading images!"
+            android:textColor="#0039A9"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/successIconImageView"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            app:lottie_rawRes="@raw/thank"
+            app:lottie_autoPlay="true"
+            android:layout_below="@id/thankYouTextView"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+
+
 
 
 
