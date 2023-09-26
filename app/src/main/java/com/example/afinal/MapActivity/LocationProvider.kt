@@ -40,6 +40,12 @@ class LocationProvider(private val activity: AppCompatActivity) {
 
     private lateinit var map: GoogleMap
 
+
+    private val SMOOTHING_WINDOW_SIZE = 126
+
+    private val smoothedLocations = mutableListOf<LatLng>()
+
+
     val liveLocations = MutableLiveData<List<LatLng>>()
     val liveDistance = MutableLiveData<Int>()
     val liveLocation = MutableLiveData<LatLng>()
@@ -98,7 +104,19 @@ class LocationProvider(private val activity: AppCompatActivity) {
 //                        Log.d("Distance", "Total distance: $distance meters")
 //                    }
 //                }
-                locations.add(latLng)
+                // Add the latLng to the smoothedLocations
+                smoothedLocations.add(latLng)
+
+                // Keep the size of smoothedLocations within a certain limit (e.g., 5 data points)
+                if (smoothedLocations.size > SMOOTHING_WINDOW_SIZE) {
+                    smoothedLocations.removeAt(0)
+                }
+
+                // Calculate the smoothed latitude and longitude
+                val smoothedLatLng = calculateSmoothedLatLng(smoothedLocations)
+
+                locations.add(smoothedLatLng)
+//                locations.add(latLng)
                 liveLocations.value = locations
 
                 saveLocationToFirebase(currentLocation, distance)
@@ -106,6 +124,20 @@ class LocationProvider(private val activity: AppCompatActivity) {
             }
         }
 
+        private fun calculateSmoothedLatLng(locations: List<LatLng>): LatLng {
+            var sumLat = 0.0
+            var sumLng = 0.0
+
+            for (location in locations) {
+                sumLat += location.latitude
+                sumLng += location.longitude
+            }
+
+            val smoothedLat = sumLat / locations.size
+            val smoothedLng = sumLng / locations.size
+
+            return LatLng(smoothedLat, smoothedLng)
+        }
         private fun saveLocationToFirebase(currentLocation: Location, totaldistance : Int) {
             // Assuming you have a FirebaseUser object representing the authenticated user
             val user = FirebaseAuth.getInstance().currentUser
