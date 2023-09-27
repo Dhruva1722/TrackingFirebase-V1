@@ -247,6 +247,7 @@ fun calculateDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double): D
     return d
 }
 
+
 fun deg2rad(deg: Double): Double {
     return deg * (Math.PI / 180)
 }
